@@ -29,16 +29,6 @@ export function BoardHeader({ board }: BoardHeaderProps) {
 
 	return (
 		<>
-			<InviteMemberModal
-				board={board}
-				onClose={() => setActiveModal(null)}
-				open={activeModal === 'invite'}
-			/>
-			<ManageMembersModal
-				board={board}
-				onClose={() => setActiveModal(null)}
-				open={activeModal === 'manage'}
-			/>
 			<header className='bg-black/30 backdrop-blur-sm border-b border-white/20'>
 				<div className='container mx-auto px-4'>
 					<div className='flex items-center justify-between h-14'>
@@ -98,9 +88,8 @@ export function BoardHeader({ board }: BoardHeaderProps) {
 								variant='ghost'
 								size='icon'
 								onClick={() => setStarred(!starred)}
-								className={`text-white hover:bg-white/10 ${
-									starred ? 'text-yellow-400' : ''
-								}`}
+								className={`text-white hover:bg-white/10 ${starred ? 'text-yellow-400' : ''
+									}`}
 							>
 								<Star className={`h-4 w-4 ${starred ? 'fill-current' : ''}`} />
 							</Button>
@@ -130,6 +119,17 @@ export function BoardHeader({ board }: BoardHeaderProps) {
 					</div>
 				</div>
 			</header>
+
+			<InviteMemberModal
+				board={board}
+				onClose={() => setActiveModal(null)}
+				open={activeModal === 'invite'}
+			/>
+			<ManageMembersModal
+				board={board}
+				onClose={() => setActiveModal(null)}
+				open={activeModal === 'manage'}
+			/>
 		</>
 	);
 }
