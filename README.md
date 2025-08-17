@@ -57,83 +57,6 @@ _Modal para criação e edição de tarefas_
 5. **Acesse a aplicação**
    Abra seu navegador e acesse: `http://localhost:3000`
 
-## 📁 Estrutura do Projeto
-
-```
-app/
-├── auth/               # Páginas de autenticação
-│   ├── login/
-│   │   └── page.tsx   # Página de login
-│   ├── register/
-│   │   └── page.tsx   # Página de registro
-│   └── layout.tsx     # Layout de autenticação
-├── board/             # Páginas de boards
-│   └── [id]/
-│       └── page.tsx   # Página específica do board
-├── dashboard/         # Dashboard principal
-│   └── page.tsx      # Lista de boards do usuário
-├── globals.css        # Estilos globais
-├── layout.tsx         # Layout raiz
-└── page.tsx          # Página inicial
-
-components/
-├── auth/              # Componentes de autenticação
-│   ├── LoginForm.tsx
-│   ├── RegisterForm.tsx
-│   └── AuthGuard.tsx
-├── board/             # Componentes do board
-│   ├── Board.tsx      # Componente principal do board
-│   ├── List.tsx       # Componente de lista
-│   ├── Card.tsx       # Componente de tarefa/card
-│   ├── CardModal.tsx  # Modal detalhado da tarefa
-│   ├── AddCardForm.tsx
-│   ├── AddListForm.tsx
-│   └── MembersList.tsx
-├── dashboard/         # Componentes do dashboard
-│   ├── BoardCard.tsx
-│   ├── CreateBoardModal.tsx
-│   └── BoardsGrid.tsx
-├── ui/               # Componentes base/UI
-│   ├── Button.tsx
-│   ├── Input.tsx
-│   ├── Modal.tsx
-│   ├── Avatar.tsx
-│   ├── Badge.tsx
-│   ├── Dropdown.tsx
-│   ├── DatePicker.tsx
-│   └── LoadingSpinner.tsx
-└── layout/           # Componentes de layout
-    ├── Header.tsx
-    ├── Sidebar.tsx
-    └── Navigation.tsx
-
-hooks/
-├── useAuth.ts        # Hook de autenticação
-├── useSocket.ts      # Hook de WebSocket
-├── useBoards.ts      # Hook para boards
-├── useLists.ts       # Hook para listas
-├── useCards.ts       # Hook para cards
-└── useRealtimeUpdates.ts # Hook para atualizações em tempo real
-
-lib/
-├── api.ts           # Cliente da API
-├── socket.ts        # Configuração do Socket.io
-├── auth.ts          # Utilitários de autenticação
-├── utils.ts         # Utilitários gerais
-└── validators.ts    # Schemas de validação (Zod)
-
-stores/
-├── authStore.ts     # Store de autenticação (Zustand)
-├── boardStore.ts    # Store do board atual
-└── uiStore.ts       # Store da interface
-
-types/
-├── auth.ts          # Tipos de autenticação
-├── board.ts         # Tipos de boards
-├── api.ts           # Tipos da API
-└── index.ts         # Exports centralizados
-```
-
 ### 📡 Eventos em Tempo Real
 
 | Evento          | Descrição            | Dados                                        |
@@ -145,8 +68,6 @@ types/
 | `card-created`  | Nova tarefa criada   | `{ listId, card }`                           |
 | `card-updated`  | Tarefa modificada    | `{ cardId, changes }`                        |
 | `card-moved`    | Tarefa movida        | `{ cardId, fromListId, toListId, position }` |
-| `comment-added` | Novo comentário      | `{ cardId, comment }`                        |
-| `member-joined` | Novo membro no board | `{ boardId, member }`                        |
 
 ---
 
