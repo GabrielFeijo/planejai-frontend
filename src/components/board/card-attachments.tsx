@@ -110,9 +110,30 @@ export function CardAttachmentsModal({ card, open, onClose }: CardAttachmentsMod
         setIsDragging(false);
     };
 
-    const handleDownload = (attachment: Attachment) => {
-        window.open(attachment.url, '_blank');
+    const handleDownload = async (attachment: Attachment) => {
+        try {
+            const response = await cardsApi.downloadAttachment(card.id, attachment.id);
+
+            const blob = response.data;
+
+            const url = window.URL.createObjectURL(blob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = attachment.filename || 'download';
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            window.URL.revokeObjectURL(url);
+
+            toast.success('Arquivo baixado com sucesso');
+        } catch (error) {
+            console.error('Erro ao baixar arquivo:', error);
+        }
     };
+
 
     const handleDelete = (attachment: Attachment) => {
         if (confirm(`Remover arquivo ${attachment.filename}?`)) {
