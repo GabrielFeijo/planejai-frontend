@@ -99,7 +99,6 @@ export function CardDueDateModal({ card, open, onClose }: CardDueDateModalProps)
         onClose();
     };
 
-    // Sugestões de datas rápidas
     const quickDateOptions = [
         {
             label: 'Hoje',

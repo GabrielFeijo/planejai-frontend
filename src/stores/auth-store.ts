@@ -30,7 +30,7 @@ export const useAuthStore = create<AuthState>()(
 						expires: 7,
 						sameSite: 'lax',
 						secure: process.env.NODE_ENV === 'production',
-						httpOnly: false, // Precisa ser false para JS acessar
+						httpOnly: false,
 					});
 					set({
 						token,
