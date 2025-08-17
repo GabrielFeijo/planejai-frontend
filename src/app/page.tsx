@@ -19,28 +19,12 @@ export default function HomePage() {
 
 	return (
 		<div className='min-h-screen bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-700 flex flex-col'>
-			<header className='container mx-auto px-6 py-6 flex items-center justify-between'>
+			<header className='container mx-auto px-6 py-6 flex items-center justify-center'>
 				<div className='flex items-center space-x-2'>
 					<SquareKanban className='h-8 w-8 text-white' />
 					<span className='text-2xl font-bold text-white tracking-tight'>
 						PlanejAí
 					</span>
-				</div>
-
-				<div className='space-x-4 hidden md:block'>
-					<Link href='/auth/login'>
-						<Button
-							variant='outline'
-							className='text-blue-900 border-white hover:bg-white/10'
-						>
-							Entrar
-						</Button>
-					</Link>
-					<Link href='/auth/register'>
-						<Button className='bg-yellow-400 text-blue-900 hover:bg-yellow-300'>
-							Começar
-						</Button>
-					</Link>
 				</div>
 			</header>
 
