@@ -58,23 +58,22 @@ export function CardComponent({ card }: CardComponentProps) {
 					<div className='flex items-center space-x-2 text-gray-500'>
 						{hasDueDate && (
 							<div
-								className={`flex items-center space-x-1 text-xs ${
-									isOverdue(card.dueDate) ? 'text-red-600' : 'text-gray-500'
-								}`}
+								className={`flex items-center space-x-1 text-xs ${isOverdue(card.dueDate) ? 'text-red-600' : 'text-gray-500'
+									}`}
 							>
 								<Calendar className='h-3 w-3' />
 								<span>{formatDate(card.dueDate!)}</span>
 							</div>
 						)}
 
-						{hasComments && (
+						{!!hasComments && (
 							<div className='flex items-center space-x-1 text-xs'>
 								<MessageSquare className='h-3 w-3' />
 								<span>{card._count!.comments}</span>
 							</div>
 						)}
 
-						{hasAttachments && (
+						{!!hasAttachments && (
 							<div className='flex items-center space-x-1 text-xs'>
 								<Paperclip className='h-3 w-3' />
 								<span>{card._count!.attachments}</span>
