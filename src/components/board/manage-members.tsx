@@ -49,13 +49,6 @@ const roleLabels = {
 	OBSERVER: 'Observador',
 };
 
-const roleDescriptions = {
-	OWNER: 'Acesso total ao board',
-	ADMIN: 'Pode gerenciar membros e configurações',
-	MEMBER: 'Pode editar cards e listas',
-	OBSERVER: 'Apenas visualização',
-};
-
 const roleIcons = {
 	OWNER: Crown,
 	ADMIN: Shield,
