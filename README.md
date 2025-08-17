@@ -67,7 +67,7 @@ _Modal para criação e edição de tarefas_
 | `list-deleted`  | Lista removida       | `{ boardId, listId }`                        |
 | `card-created`  | Nova tarefa criada   | `{ listId, card }`                           |
 | `card-updated`  | Tarefa modificada    | `{ cardId, changes }`                        |
-| `card-moved`    | Tarefa movida        | `{ cardId, fromListId, toListId, position }` |
+| `card-moved`    | Tarefa movida        | `{ cardId, toListId, position }` |
 
 ---
 
