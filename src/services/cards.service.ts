@@ -1,5 +1,5 @@
 import { api } from './apiClient';
-import { Card, CreateCardData, MoveCardData } from '@/types';
+import { Attachment, Card, CreateCardData, MoveCardData } from '@/types';
 
 export const cardsApi = {
 	getById: (id: string) => api.get<Card>(`/cards/${id}`),
@@ -15,4 +15,17 @@ export const cardsApi = {
 		api.post(`/cards/${id}/members`, data),
 	unassignMember: (id: string, memberId: string) =>
 		api.delete(`/cards/${id}/members/${memberId}`),
+
+	uploadAttachment: (cardId: string, formData: FormData) =>
+		api.post<Attachment>(`/cards/${cardId}/attachments`, formData, {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
+		}),
+	deleteAttachment: (cardId: string, attachmentId: string) =>
+		api.delete(`/cards/${cardId}/attachments/${attachmentId}`),
+	downloadAttachment: (cardId: string, attachmentId: string) =>
+		api.get(`/cards/${cardId}/attachments/${attachmentId}/download`, {
+			responseType: 'blob',
+		}),
 };
