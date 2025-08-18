@@ -1,6 +1,6 @@
 # PlanejAí - Sistema Colaborativo de Gestão de Tarefas
 
-O **PlanejaAí** é uma interface web moderna e intuitiva para gestão colaborativa de tarefas e projetos. A aplicação oferece uma experiência fluida com atualizações em tempo real, drag & drop, e uma interface inspirada nos melhores sistemas de produtividade do mercado.
+O **PlanejAí** é uma interface web moderna e intuitiva para gestão colaborativa de tarefas e projetos. A aplicação oferece uma experiência fluida com atualizações em tempo real, drag & drop, e uma interface inspirada nos melhores sistemas de produtividade do mercado.
 
 ### 📸 Screenshots
 
@@ -20,7 +20,7 @@ _Modal para criação e edição de tarefas_
 
 - Node.js (versão 18 ou superior)
 - npm ou yarn
-- API PlanejaAi rodando (backend)
+- API PlanejAí rodando (backend)
 
 ## 🚀 Instalação
 
@@ -59,14 +59,14 @@ _Modal para criação e edição de tarefas_
 
 ### 📡 Eventos em Tempo Real
 
-| Evento          | Descrição            | Dados                                        |
-| --------------- | -------------------- | -------------------------------------------- |
-| `board-updated` | Board foi modificado | `{ boardId, changes }`                       |
-| `list-created`  | Nova lista criada    | `{ boardId, list }`                          |
-| `list-updated`  | Lista modificada     | `{ boardId, listId, changes }`               |
-| `list-deleted`  | Lista removida       | `{ boardId, listId }`                        |
-| `card-created`  | Nova tarefa criada   | `{ listId, card }`                           |
-| `card-updated`  | Tarefa modificada    | `{ cardId, changes }`                        |
+| Evento          | Descrição            | Dados                            |
+| --------------- | -------------------- | -------------------------------- |
+| `board-updated` | Board foi modificado | `{ boardId, changes }`           |
+| `list-created`  | Nova lista criada    | `{ boardId, list }`              |
+| `list-updated`  | Lista modificada     | `{ boardId, listId, changes }`   |
+| `list-deleted`  | Lista removida       | `{ boardId, listId }`            |
+| `card-created`  | Nova tarefa criada   | `{ listId, card }`               |
+| `card-updated`  | Tarefa modificada    | `{ cardId, changes }`            |
 | `card-moved`    | Tarefa movida        | `{ cardId, toListId, position }` |
 
 ---

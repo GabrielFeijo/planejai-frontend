@@ -60,7 +60,7 @@ export default function LoginPage() {
 			<Card className='w-full max-w-md'>
 				<CardHeader className='text-center'>
 					<SquareKanban className='h-8 w-8 text-blue-600 mx-auto' />
-					<CardTitle className='text-2xl font-bold'>PlanejaAí</CardTitle>
+					<CardTitle className='text-2xl font-bold'>PlanejAí</CardTitle>
 					<CardDescription>
 						Faça login para acessar seus quadros
 					</CardDescription>
