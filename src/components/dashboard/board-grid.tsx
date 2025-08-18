@@ -18,7 +18,7 @@ export function BoardGrid({
 	return (
 		<div className='space-y-6'>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-				<button
+				{boards.length > 0 && <button
 					onClick={() => setIsCreateBoardModalOpen(true)}
 					className='h-24 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-200 hover:border-gray-400 transition-colors group'
 				>
@@ -28,7 +28,7 @@ export function BoardGrid({
 							Criar novo quadro
 						</span>
 					</div>
-				</button>
+				</button>}
 
 				{boards.map((board) => (
 					<BoardCard
